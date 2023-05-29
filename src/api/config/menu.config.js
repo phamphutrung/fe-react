@@ -10,25 +10,25 @@ import {
 
 const main = [
     {
-        dislay: 'home',
+        display: 'home',
         path: '/',
         icon: <HomeOutlined />,
         state: 'home'
     },
     {
-        dislay: 'movies',
+        display: 'movies',
         path: '/movie',
         icon: <SlideshowOutlined />,
         state: 'movie'
     },
     {
-        dislay: 'tv series',
+        display: 'tv series',
         path: '/tv',
         icon: <LiveTvOutlined />,
         state: 'hometv'
     },
     {
-        dislay: 'search',
+        display: 'search',
         path: '/search',
         icon: <SearchOffOutlined />,
         state: 'search'
@@ -37,19 +37,19 @@ const main = [
 
 const user = [
     {
-        dislay: 'favorite',
+        display: 'favorite',
         path: '/favorite',
         icon: <FavoriteBorderOutlined />,
         state: 'favorite'
     },
     {
-        dislay: 'reviews',
+        display: 'reviews',
         path: '/reviews',
         icon: <RateReviewOutlined />,
         state: 'reviews'
     },
     {
-        dislay: 'password update',
+        display: 'password update',
         path: '/password-update',
         icon: <LockResetOutlined />,
         state: 'password.update'
