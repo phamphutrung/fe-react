@@ -37,7 +37,7 @@ const uiConfigs = {
         })
     },
     size: {
-        sideBarWith: '300px',
+        sideBarWidth: '300px',
         contentMaxWith: '1366px'
     }
 }

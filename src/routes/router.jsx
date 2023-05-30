@@ -8,16 +8,16 @@ import MediaDetail from '@/pages/MediaDetail'
 import FavoriteList from '@/pages/FavoriteList'
 import ProtectedPage from '@/components/common/ProtectedPage'
 
-const routesGen = {
-    home: '/',
-    mediaSearch: '/search',
-    favoriteList: '/favorites',
-    reviewList: '/reviews',
-    passwordUpdate: 'password-update',
-    mediaList: (type) => `/${type}`,
-    mediaDetail: (type, id) => `/${type}/${id}`,
-    person: (id) => `/person/${id}`
-}
+// const routesGen = {
+//     home: '/',
+//     mediaSearch: '/search',
+//     favoriteList: '/favorites',
+//     reviewList: '/reviews',
+//     passwordUpdate: 'password-update',
+//     mediaList: (type) => `/${type}`,
+//     mediaDetail: (type, id) => `/${type}/${id}`,
+//     person: (id) => `/person/${id}`
+// }
 
 const routes = [
     {
