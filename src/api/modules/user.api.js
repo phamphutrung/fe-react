@@ -2,16 +2,16 @@ import privateClient from '../client/private.client'
 import publicClient from '../client/public.client'
 
 const userEndPoint = {
-    register: 'user/register',
-    login: 'user/login',
+    signUp: 'user/register',
+    signIn: 'user/login',
     getInfo: 'user/info',
     updatePassword: 'user/update-password'
 }
 
 const userApi = {
-    login: async ({ username, password }) => {
+    signIn: async ({ username, password }) => {
         try {
-            const response = await publicClient.post(userEndPoint.login, { username, password })
+            const response = await publicClient.post(userEndPoint.signIn, { username, password })
 
             return { response }
         } catch (error) {
@@ -19,9 +19,9 @@ const userApi = {
         }
     },
 
-    register: async ({ username, password, confirmPassword, displayName }) => {
+    signUp: async ({ username, password, confirmPassword, displayName }) => {
         try {
-            const response = await publicClient.post(userEndPoint.register, {
+            const response = await publicClient.post(userEndPoint.signUp, {
                 username,
                 password,
                 confirmPassword,

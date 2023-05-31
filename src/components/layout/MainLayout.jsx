@@ -18,7 +18,13 @@ const MainLayout = () => {
                 {/* header */}
                 <Topbar />
                 {/* main */}
-                <Box component='main' flexGrow={1} overflow='hidden' minHeight='100vh'>
+                <Box
+                    component='main'
+                    flexGrow={1}
+                    overflow='hidden'
+                    minHeight='100vh'
+                    sx={{ backgroundColor: 'background.paper' }}
+                >
                     <Outlet></Outlet>
                 </Box>
                 {/* main */}

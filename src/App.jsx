@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify'
 import CssBaseline from '@mui/material/CssBaseline'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainLayout from './components/layout/MainLayout'
+import 'react-toastify/dist/ReactToastify.css'
 
 import routes from './routes/router'
 import PageWrapper from './components/common/PageWrapper'
@@ -15,8 +16,8 @@ const App = () => {
     return (
         <ThemeProvider theme={themeConfigs.custom({ mode: themeMode })}>
             <ToastContainer
-                position='bottom-left'
-                autoClose={3000}
+                position='top-right'
+                autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

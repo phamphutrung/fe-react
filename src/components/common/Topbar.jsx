@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom'
 import UserMenu from './UserMenu'
 import { setAuthModal } from '@/redux/features/authModalSlice'
 import SideBar from './Sidebar'
-import AuthModal from './AuthModal'
 
 const ScrollAppBar = ({ children, window }) => {
     const { themeMode } = useSelector((state) => state.themeMode)
@@ -49,7 +48,6 @@ const Topbar = () => {
 
     return (
         <>
-            <AuthModal />
             <SideBar open={sidebarOpen} toggleSidebar={toggleSidebar} />
             <ScrollAppBar>
                 <AppBar elevation={0} sx={{ zIndex: 9999 }}>
@@ -67,24 +65,26 @@ const Topbar = () => {
                                     <Logo />
                                 </Box>
                                 <Box>
-                                    {menuConfigs.main.map((item, index) => (
-                                        <Button
-                                            key={index}
-                                            sx={{
-                                                color: appState.includes(item.state)
-                                                    ? 'primary.contrastText'
-                                                    : 'inherit'
-                                            }}
-                                            component={Link}
-                                            to={item.path}
-                                            variant={appState.includes(item.state) ? 'contained' : 'text'}
-                                        >
-                                            {item.display}
-                                        </Button>
-                                    ))}
-                                    <IconButton sx={{ color: 'inherit' }} onClick={onSwitchTheme}>
-                                        {themeMode === themeModes.dark ? <DarkModeOutlined /> : <WbSunnyOutlined />}
-                                    </IconButton>
+                                    <Stack direction='row' spacing={2} alignItems='center'>
+                                        {menuConfigs.main.map((item, index) => (
+                                            <Button
+                                                key={index}
+                                                sx={{
+                                                    color: appState.includes(item.state)
+                                                        ? 'primary.contrastText'
+                                                        : 'inherit'
+                                                }}
+                                                component={Link}
+                                                to={item.path}
+                                                variant={appState.includes(item.state) ? 'contained' : 'text'}
+                                            >
+                                                {item.display}
+                                            </Button>
+                                        ))}
+                                        <IconButton sx={{ color: 'inherit' }} onClick={onSwitchTheme}>
+                                            {themeMode === themeModes.dark ? <DarkModeOutlined /> : <WbSunnyOutlined />}
+                                        </IconButton>
+                                    </Stack>
                                 </Box>
                             </Box>
                         </Stack>
@@ -98,7 +98,8 @@ const Topbar = () => {
                                 </Button>
                             )}
                         </Stack>
-                        {user && <UserMenu />}
+                        {/* {user && 'ok'} */}
+                        {user && <UserMenu user={user} />}
                         {/* end user menu */}
                     </Toolbar>
                 </AppBar>

@@ -1,4 +1,5 @@
 import menuConfigs from '@/api/config/menu.config'
+import { setAuthModal } from '@/redux/features/authModalSlice'
 import { setUser } from '@/redux/features/userSlice'
 import { LogoutOutlined } from '@mui/icons-material'
 import { ListItemButton, ListItemIcon, ListItemText, Menu, Typography } from '@mui/material'
@@ -11,6 +12,11 @@ const UserMenu = () => {
     const dispatch = useDispatch()
     const [anchorEl, setAnchorEl] = useState(null)
     const toggleMenu = (e) => setAnchorEl(e.currentTarget)
+
+    const handleSignIn = () => {
+        dispatch(setUser(null))
+        dispatch(setAuthModal(true))
+    }
 
     return (
         <>
@@ -26,7 +32,7 @@ const UserMenu = () => {
                         PaperProps={{ sx: { padding: 0 } }}
                     >
                         {menuConfigs.user.map((item, index) => (
-                            <ListItemButton key={index} component={Link} to={item.path} onClick={setAnchorEl(null)}>
+                            <ListItemButton key={index} component={Link} to={item.path}>
                                 <ListItemIcon>{item.icon}</ListItemIcon>
                                 <ListItemText
                                     disableTypography
@@ -34,7 +40,7 @@ const UserMenu = () => {
                                 />
                             </ListItemButton>
                         ))}
-                        <ListItemButton sx={{ borderRadius: '10px' }} onClick={() => dispatch(setUser(null))}>
+                        <ListItemButton sx={{ borderRadius: '10px' }} onClick={() => handleSignIn()}>
                             <ListItemIcon>
                                 <LogoutOutlined />
                             </ListItemIcon>

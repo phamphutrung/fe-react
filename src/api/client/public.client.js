@@ -2,7 +2,7 @@
 import axios from 'axios'
 import queryString from 'query-string'
 
-const baseUrl = 'https://localhost:5000/api/'
+const baseUrl = 'http://localhost:5000/api/v1'
 
 const publicClient = axios.create({
     baseURL: baseUrl,
