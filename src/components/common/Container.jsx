@@ -5,8 +5,10 @@ const Container = ({ header, children }) => {
     return (
         <Box
             sx={{
+                color: 'text.primary',
                 marginX: 'auto',
-                color: 'text.primary'
+                maxWidth: '1366px',
+                width: '100%'
             }}
         >
             <Stack spacing={4}>
@@ -15,21 +17,21 @@ const Container = ({ header, children }) => {
                         sx={{
                             position: 'relative',
                             paddingX: { xs: '20px', md: '0' },
-                            maxWidth: '1366px',
                             width: '100%',
+                            maxWidth: '1366px',
                             marginX: 'auto',
                             '&::before': {
                                 content: '""',
                                 position: 'absolute',
                                 left: { xs: '20px', md: '0' },
-                                top: '10-0%',
-                                height: '50px',
+                                top: '100%',
+                                height: '5px',
                                 width: '100px',
                                 backgroundColor: 'primary.main'
                             }
                         }}
                     >
-                        <Typography variant='h5' fontWeight='700'>
+                        <Typography variant='h5' fontWeight='700' textTransform={'uppercase'}>
                             {header}
                         </Typography>
                     </Box>

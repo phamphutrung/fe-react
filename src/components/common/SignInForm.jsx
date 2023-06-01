@@ -31,7 +31,6 @@ function SignInForm({ switchAuthState }) {
             setIsLoginRequest(false)
 
             if (response) {
-                console.log('login success')
                 signForm.resetForm()
                 dispatch(setAuthModal(false))
                 dispatch(setUser(response))

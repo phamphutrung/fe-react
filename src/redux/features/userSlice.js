@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const userSlice = createSlice({
     name: 'User',
     initialState: {
-        user: JSON.parse(localStorage.getItem('userInfo')) ?? null,
+        user: null,
         listFavorites: []
     },
     reducers: {
@@ -13,7 +13,6 @@ export const userSlice = createSlice({
                 localStorage.removeItem('actkn')
             } else {
                 if (action.payload.token) localStorage.setItem('actkn', action.payload.token)
-                if (action.payload.token) localStorage.setItem('userInfo', JSON.stringify(action.payload))
             }
 
             state.user = action.payload

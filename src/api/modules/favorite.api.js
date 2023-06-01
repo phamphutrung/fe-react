@@ -9,7 +9,7 @@ const favoriteEndPoint = {
 const favoriteApi = {
     getList: async () => {
         try {
-            const response = await privateClient.get(favoriteEndPoint.list())
+            const response = await privateClient.get(favoriteEndPoint.list)
 
             return { response }
         } catch (error) {

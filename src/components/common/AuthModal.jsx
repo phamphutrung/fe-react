@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Logo from './Logo'
 import { setAuthModal } from '@/redux/features/authModalSlice'
 import { Box, Modal } from '@mui/material'
-import { useTheme } from '@emotion/react'
 import SignInForm from './SignInForm'
 import SignUpForm from './SignUpForm'
 
@@ -25,8 +24,6 @@ const AuthModal = () => {
         if (authModalOpen) setAction(actionState.signIn)
     }, [authModalOpen])
 
-    const color = useTheme().palette.primary.main
-
     return (
         <Modal open={authModalOpen} onClose={handleClose}>
             <Box
@@ -36,13 +33,10 @@ const AuthModal = () => {
                     maxWidth: '550px',
                     top: '50%',
                     left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    padding: 4,
-                    outline: `1px solid ${color}`,
-                    borderRadius: 3
+                    transform: 'translate(-50%, -50%)'
                 }}
             >
-                <Box sx={{ padding: 4, boxShadow: 24, backgroundColor: 'background.paper' }}>
+                <Box sx={{ padding: 4, boxShadow: 5, backgroundColor: 'background.paper' }}>
                     <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
                         <Logo />
                     </Box>
